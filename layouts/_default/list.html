@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+# List Template specific to /proj directory - did this work
+
+{{ .Content }}
+
+<h2>Sections</h2>
+
+<ul>
+{{ range .Sections.Reverse }}
+<li>
+    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+</li>
+{{ end }}
+</ul>
+
+
+<h2>Pages</h2>
+
+<ul>
+{{ range .RegularPages.Reverse }}
+<li>
+    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+</li>
+{{ end }}
+</ul>
+
+
+{{ end }}
